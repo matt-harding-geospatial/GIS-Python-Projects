@@ -13,8 +13,8 @@ import os
 
 # ------------ Updaters Credentials ------------
 
-username = "mharding_ang" # ArcGIS Online username
-password = "2rxrvgjCcNDEjE2" # ArcGIS Online password
+username = "username" # ArcGIS Online username
+password = "password" # ArcGIS Online password
 data_check = "MH" # Initials
 receiver_email = "emorgan2@anglianwater.co.uk" # Email to recieve update on code completion
 
