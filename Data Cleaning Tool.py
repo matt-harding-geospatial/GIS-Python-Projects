@@ -15,8 +15,8 @@ import os
 
 username = "username" # ArcGIS Online username
 password = "password" # ArcGIS Online password
-data_check = "MH" # Initials
-receiver_email = "emorgan2@anglianwater.co.uk" # Email to recieve update on code completion
+data_check = "XX" # Initials
+receiver_email = "receiver_email" # Email to recieve update on code completion
 
 # ------------ Accessing ArcGIS Online ------------
 
@@ -51,7 +51,7 @@ table_data = query_result.sdf
 
 # ------------ Establishing Output csv ------------
 
-log_csv_output_path = r"C:\Users\mhard\OneDrive\Documents\ArcGIS\AnglianWater\Data Cleansing\UpdateLog\UpdateLogTest.csv"
+log_csv_output_path = r"C:\Users\UserExample\OneDrive\Documents\ArcGIS\Data Cleansing\UpdateLog\UpdateLogTest.csv"
 
 # ------------ Establishing Script Logging ------------
 
@@ -80,8 +80,8 @@ def log_update(feature_layer, project_code, object_id=None, old_project_name=Non
 # ------------ Establishing Email Notification ------------
 
 def send_email_notification(status="Success", update_log=None, error_details=None):
-    sender_email = "datacleansingpythonscript@gmail.com"
-    sender_password = "eayb uqdu zrxc wvkt"
+    sender_email = "sender_email"
+    sender_password = "sender_password"
     port = 465
     smtp_server = "smtp.gmail.com"
     subject = f"Python Script: {status} Notification"
