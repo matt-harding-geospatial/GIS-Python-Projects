@@ -1,0 +1,18 @@
+# Importing the libraries that the code will utalise
+import arcpy
+import glob
+import os
+# Will need to create a "Master" symbology layer that all other unsymbolised shapefiles will draw from when creating their respective symbology
+symbology_layer = r"C:\Users\mhard\OneDrive\Documents\ArcGIS\AnglianWater\Python\CAS Python Test\LayerSymbo\CAS_Master.lyrx"
+# Unsymbolised shapefiles
+shapefile_directory = r"C:\Users\mhard\OneDrive\Documents\ArcGIS\AnglianWater\Python\CAS Python Test"
+# Highlights specifically the shapefiles in the directory
+target_layers = [os.path.join(shapefile_directory, f) for f in os.listdir(shapefile_directory) if f.endswith('.shp') and f.startswith('CAS_')]
+# Applies Master Symbology to Unsymbolised layers using the ArcTool "Apply Symbology from Layer"
+if not target_layers:
+    print("No shapefiles found in the directory.")
+else:
+    for layer in target_layers:
+        print(f"Applying symbology to {layer}")
+        arcpy.management.ApplySymbologyFromLayer(layer, symbology_layer)
+    print("Symbology applied to all layers successfully - Matt :^P")
