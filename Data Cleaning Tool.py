@@ -31,20 +31,20 @@ except Exception as auth_error:
 # ------------ Establishing AGOL Hosted Feature Layer URLS and Name Mapping ------------
 
 gdb_feature_layer_urls = [
-    "https://services3.arcgis.com/VCOY1atHWVcDlvlJ/arcgis/rest/services/Test_Alliance_Shared_Mark_ups_and_Annotations_V2_COPY/FeatureServer/4",
-    "https://services3.arcgis.com/VCOY1atHWVcDlvlJ/arcgis/rest/services/Test_Alliance_Shared_Mark_ups_and_Annotations_V2_COPY/FeatureServer/5",
-    "https://services3.arcgis.com/VCOY1atHWVcDlvlJ/arcgis/rest/services/Test_Alliance_Shared_Mark_ups_and_Annotations_V2_COPY/FeatureServer/6"
+    "https://services3.arcgis.com/XXXXXXXXXXXXXXXX/arcgis/Test_Annotations/FeatureServer/1",
+    "https://services3.arcgis.com/XXXXXXXXXXXXXXXX/arcgis/Test_Annotations/FeatureServer/2",
+    "https://services3.arcgis.com/XXXXXXXXXXXXXXXX/arcgis/Test_Annotations/FeatureServer/3"
 ]
 
 url_to_name_mapping = {
-    "https://services3.arcgis.com/VCOY1atHWVcDlvlJ/arcgis/rest/services/Test_Alliance_Shared_Mark_ups_and_Annotations_V2_COPY/FeatureServer/4": "Area",
-    "https://services3.arcgis.com/VCOY1atHWVcDlvlJ/arcgis/rest/services/Test_Alliance_Shared_Mark_ups_and_Annotations_V2_COPY/FeatureServer/5": "Lines",
-    "https://services3.arcgis.com/VCOY1atHWVcDlvlJ/arcgis/rest/services/Test_Alliance_Shared_Mark_ups_and_Annotations_V2_COPY/FeatureServer/6": "Points"
+    "https://services3.arcgis.com/XXXXXXXXXXXXXXXX/arcgis/Test_Annotations/FeatureServer/1": "Area",
+    "https://services3.arcgis.com/XXXXXXXXXXXXXXXX/arcgis/Test_Annotations/FeatureServer/2": "Lines",
+    "https://services3.arcgis.com/XXXXXXXXXXXXXXXX/arcgis/Test_Annotations/FeatureServer/3": "Points"
 }
 
 # ------------ Establishing AGOL Hosted Table URLS ------------
 
-hosted_table_url = "https://services3.arcgis.com/VCOY1atHWVcDlvlJ/arcgis/rest/services/projects_info_copy_3/FeatureServer/0"
+hosted_table_url = "https://services3.arcgis.com/XXXXXXXXXXXXXXXX/arcgis/projects_info/FeatureServer/0"
 hosted_table = FeatureLayer(hosted_table_url)
 query_result = hosted_table.query(where="1=1", out_fields="*", return_geometry=False)
 table_data = query_result.sdf
@@ -82,7 +82,7 @@ def log_update(feature_layer, project_code, object_id=None, old_project_name=Non
 def send_email_notification(status="Success", update_log=None, error_details=None):
     sender_email = "sender_email"
     sender_password = "sender_password"
-    port = 465
+    port = 123
     smtp_server = "smtp.gmail.com"
     subject = f"Python Script: {status} Notification"
 
